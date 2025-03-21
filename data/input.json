@@ -1,0 +1,57 @@
+{
+  "swagger": "2.0",
+  "host": "api.example.com",
+  "basePath": "/v1",
+  "paths": {
+    "/users/{userId}": {
+      "get": {
+        "operationId": "getUser",
+        "description": "Retrieves a user by ID.",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "includeDetails",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "description": "Include extra user details"
+          },
+          {
+            "name": "excludeSensitive",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "description": "Exclude sensitive information"
+          }
+        ]
+      },
+      "post": {
+        "operationId": "createUser",
+        "description": "Creates a user.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
