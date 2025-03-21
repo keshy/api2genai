@@ -1,6 +1,6 @@
 from typing import Dict, Any, List, AnyStr
 
-from frameworks import Base, F_Type
+from src.frameworks import Base, F_Type
 
 
 class OpenAIGenerator(Base):
